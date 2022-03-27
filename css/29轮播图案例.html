@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .lunbotu {
+            width: 590px;
+            height: 470px;
+            background-color: pink;
+            border: 1px solid red;
+            margin: 100px auto;
+            position: relative;
+        }
+        .lunbotu ul{
+            list-style: none;
+        }
+        .lunbotu .imgs li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+
+        }
+        .lunbotu .btn li{
+            position: absolute;
+            z-index: 20;   /* 脱离文档流，层级越高，排布越前*/
+            /*top: 0;*/
+            /*left: 0;*/
+        }
+        .lunbotu .btn .left_btn{
+             left: 0;
+            top: 50%;
+        }
+        .lunbotu .btn .right_btn{
+            right: 0;
+             top: 50%;
+        }
+        .lunbotu .btn div{
+            width: 30px;
+            height: 30px;
+            background-color: gray;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+            border-radius: 30%;
+            margin-top: -15px;
+        }
+    </style>
+</head>
+<body>
+<div class="lunbotu">
+     <ul class="btn">
+        <li class="left_btn"><div><</div></li>
+        <li class="right_btn"><div>></div></li>
+    </ul>
+
+    <ul class="imgs">
+        <li><a href=""><img src="imgs/1.jpg" alt=""></a></li>
+        <li><a href=""><img src="imgs/2.jpg" alt=""></a></li>
+        <li><a href=""><img src="imgs/3.jpg" alt=""></a></li>
+        <li><a href=""><img src="imgs/4.jpg" alt=""></a></li>
+    </ul>
+
+
+</div>
+
+</body>
+</html>

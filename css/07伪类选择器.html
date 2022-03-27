@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a:link{
+               color: red;
+           }
+           a:visited{
+               color: coral;
+           }
+           a:hover{
+               color: blue;
+           }
+           a:active{
+               color: rebeccapurple;
+           }
+
+        .c1 p:first-child{
+            color: red;
+        }
+          .c1 p:last-child{
+            color: cornflowerblue;
+        }
+        #i1:after{
+            content: '这是一个由伪类选择器生成的块级标签';
+            display: block;
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<a href="">hello world！</a>
+
+<div class="c1">
+    <p>item1</p>
+    <p>item1</p>
+    <div>item1</div>
+    <p>item1</p>
+</div>
+
+<div id="i1">
+    p标签
+    <div>333</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c1 {
+            color: red;
+        }
+
+        .c2 {
+            color: cornflowerblue;
+            font-size: 32px;
+            font-style: italic;
+        }
+
+        /*属性选择器*/
+        [type='text'] {
+            border: 1px solid red;
+        }
+
+        p[k1='v1'] {
+            color: pink;
+        }
+
+        [href$='.png'] {
+            color: orange;
+        }
+        [class*='col-md-']{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<div class="c1">admin</div>
+<div class="c1 c2">admin</div>
+
+<input type="text">
+<input type="password">
+
+<div k1="v1">7777</div>
+<p k1="v1">7777</p>
+<div class="c4">
+    <a href="1.png">click</a>
+    <a href="2.png">click</a>
+    <a href="3.jpg">click</a>
+    <a href="4.png">click</a>
+</div>
+<div class="col-md-2">col-md-2</div>
+<div class="col-md-4">col-md-4</div>
+<div class="col-md-1">col-md-1</div>
+</body>
+</html>
