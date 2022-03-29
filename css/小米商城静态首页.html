@@ -43,10 +43,142 @@
             display: inline-block;
             text-decoration: none;
         }
-        .topbar-nav span{
+
+        .topbar-nav span {
+            color: #424242;
+
+        }
+
+        .topbar-cart {
+            float: right;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            background-color: #424242;
+        }
+
+        .topbar-cart a {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #b0b0b0;
+            background-color: #424242;
+            text-decoration: none;
+        }
+
+        .topbar-info {
+            float: right;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .topbar-info a {
+            float: left;
+            color: #b0b0b0;
+            line-height: 40px;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+
+        .topbar-info span {
+            float: left;
             color: #424242;
         }
 
+        .site-header {
+            height: 100px;
+        }
+
+        .site-header .container {
+            width: 1226px;
+            margin: auto;
+        }
+
+        .headr-logo {
+            float: left;
+            width: 234px;
+            margin-top: 22px;
+            /*background: #8859d4;*/
+        }
+
+        .headr-logo .logo {
+            float: left;
+            width: 56px;
+            height: 56px;
+            background: url("//s02.mifile.cn/assets/static/image/logo-mi2.png") no-repeat;
+            background-size: 56px;
+        }
+
+        .header-nav {
+            float: left;
+            width: 992px;
+        }
+
+        .nav-list {
+            float: left;
+            height: 88px;
+            margin: 0;
+            /*padding: 12px 0 0 30px;*/
+            padding-top: 12px;
+            list-style-type: none;
+            font-size: 16px;
+            /*border: 1px solid seagreen;*/
+        }
+
+        .nav-list .nav-item {
+            float: left;
+        }
+
+        .nav-list .nav-item a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 26px 10px 38px;
+            /*line-height: 88px;*/
+            /*border: 1px solid salmon;*/
+
+        }
+
+        .header-search {
+            float: right;
+            width: 296px;
+            margin-top: 25px;
+            /*border: 1px solid salmon;*/
+        }
+
+        .header-search .search-form {
+            position: relative;
+            display: block;
+            width: 296px;
+            height: 50px;
+        }
+
+        .header-search input {
+
+            position: absolute;
+            top: 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .header-search .search-form .search-text {
+            left: 0;
+
+            width: 223px;
+            height: 48px;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 48px;
+        }
+
+        .header-search .search-form .search-btn {
+            right: 0;
+            width: 52px;
+            height: 50px;
+            font-size: 24px;
+            line-height: 24px;
+            background: #fff;
+            color: #616161;
+        }
     </style>
 </head>
 <body>
@@ -78,11 +210,43 @@
                 <span>|</span>
                 <a href="">下载</a>
             </div>
-
-            <div class="topbar-cart"></div>
-            <div class="topbar-info"></div>
+            <div class="topbar-cart">
+                <a href="">购物车<span>(0)</span></a>
+            </div>
+            <div class="topbar-info">
+                <a href="">登录</a>
+                <span>|</span>
+                <a href="">注册</a>
+                <span>|</span>
+                <a href="">消息通知</a>
+            </div>
         </div>
-        <div class="site-header  "></div>
+        <div class="site-header  ">
+            <div class="container">
+                <div class="headr-logo">
+                    <a href="//www.mi.com/index.html" class="logo" title="小米官网"></a>
+                </div>
+                <div class="header-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href=""><span>Xiaomi手机</span></a></li>
+                        <li class="nav-item"><a href=""><span>Redmi 红米</span></a></li>
+                        <li class="nav-item"><a href=""><span>电视</span></a></li>
+                        <li class="nav-item"><a href=""><span>笔记本</span></a></li>
+                        <li class="nav-item"><a href=""><span>平板</span></a></li>
+                        <li class="nav-item"><a href=""><span>家电</span></a></li>
+                        <li class="nav-item"><a href=""><span>路由器</span></a></li>
+                        <li class="nav-item"><a href=""><span>服务</span></a></li>
+                        <li class="nav-item"><a href=""><span>社区</span></a></li>
+                    </ul>
+                    <div class="header-search">
+                        <form action="" class="search-form">
+                            <input type="text" class="search-text" placeholder="小米12">
+                            <input type="submit" value="?" class="search-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
