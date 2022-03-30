@@ -179,10 +179,65 @@
             background: #fff;
             color: #616161;
         }
+
+        .home {
+            width: 1226px;
+            margin: 0 auto;
+            /*height: 400px;*/
+            /*background-color: #8859d4;*/;
+        }
+
+        /*.home .container {*/
+        /*    margin-bottom: 26px;*/
+        /*}*/
+
+        .home-hero .cate {
+            float: left;
+            width: 234px;
+            height: 460px;
+            font-size: 14px;
+            background-color: rgba(105, 101, 101, .6);
+        }
+
+        .home-hero .cate ul {
+            display: block;
+            list-style: none;
+            width: 100%;
+            padding: 20px 0;
+        }
+
+        .home-hero .cate ul li a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            padding-left: 30px;
+            line-height: 42px;
+        }
+        .home-hero .cate ul li a span{
+            float: right;
+            padding-right: 20px;
+        }
+
+        .home-hero .cate ul li a:hover {
+            background-color: #ff6700;
+        }
+
+        .home .container .lunbo {
+            float: right;
+            width: 992px;
+            height: 460px;
+            background-color: #333333;
+        }
+
+        .clearfix:after {
+            display: block;
+            content: "";
+            clear: both;
+        }
     </style>
 </head>
 <body>
-<div class="header">
+<div class="header clearfix">
     <div class="site-topbar">
         <div class="container">
             <div class="topbar-nav">
@@ -246,6 +301,34 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="home ">
+    <div class="container">
+        <div class="home-hero">
+            <div class="cate">
+                <ul>
+                    <li class="category-item"><a href="">手机<span>></span></a></li>
+                    <li class="category-item"><a href="">电视<span>></span></a></li>
+                    <li class="category-item"><a href="">笔记本 平板<span>></span></a></li>
+                    <li class="category-item"><a href="">家电<span>></span></a></li>
+                    <li class="category-item"><a href="">出行 穿戴<span>></span></a></li>
+                    <li class="category-item"><a href="">智能 路由器<span>></span></a></li>
+                    <li class="category-item"><a href="">电源 配件<span>></span></a></li>
+                    <li class="category-item"><a href="">健康 儿童<span>></span></a></li>
+                    <li class="category-item"><a href="">耳机 音响<span>></span></a></li>
+                    <li class="category-item"><a href="">生活 箱包<span>></span></a></li>
+                </ul>
+            </div>
+            <div class="lunbo"></div>
+        </div>
+        <div class="hero-sub ">
+            <div class="home-channel-list"></div>
+            <!--            <ul class="home-promo-list">-->
+            <!--                <li><a href=""><img src="" alt=""></a></li>-->
+
+            </ul>
         </div>
     </div>
 </div>
