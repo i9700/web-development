@@ -1,4 +1,336 @@
-div {
-    color: cornflowerblue;
-    background-color: bisque;
+/*div {*/
+/*    color: cornflowerblue;*/
+/*    background-color: bisque;*/
+/*}*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-width: 1226px
+}
+
+/*导航栏样式*/
+.site-topbar {
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    color: #b0b0b0;
+    background: #333
+}
+
+.container {
+    width: 1226px;
+    margin: 0 auto;
+    height: 40px;
+    /*background-color: pink;*/
+}
+
+.topbar-nav {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+}
+
+.topbar-nav a {
+    color: #b0b0b0;
+    line-height: 40px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.topbar-nav span {
+    color: #424242;
+
+}
+
+.topbar-cart {
+    float: right;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    background-color: #424242;
+}
+
+.topbar-cart a {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #b0b0b0;
+    background-color: #424242;
+    text-decoration: none;
+}
+
+.topbar-info {
+    float: right;
+    height: 40px;
+    line-height: 40px;
+}
+
+.topbar-info a {
+    float: left;
+    color: #b0b0b0;
+    line-height: 40px;
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+.container a:hover {
+    color: #fff;
+}
+
+.topbar-info span {
+    float: left;
+    color: #424242;
+}
+
+.site-header {
+    height: 100px;
+}
+
+.site-header .container {
+    width: 1226px;
+    margin: auto;
+}
+
+.headr-logo {
+    float: left;
+    width: 234px;
+    margin-top: 22px;
+    /*background: #8859d4;*/
+}
+
+.headr-logo .logo {
+    float: left;
+    width: 56px;
+    height: 56px;
+    background: url("//s02.mifile.cn/assets/static/image/logo-mi2.png") no-repeat;
+    background-size: 56px;
+}
+
+.header-nav {
+    float: left;
+    width: 992px;
+}
+
+.nav-list {
+    float: left;
+    height: 88px;
+    margin: 0;
+    /*padding: 12px 0 0 30px;*/
+    padding-top: 12px;
+    list-style-type: none;
+    font-size: 16px;
+    /*border: 1px solid seagreen;*/
+}
+
+.nav-list .nav-item {
+    float: left;
+}
+
+.nav-list .nav-item a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 26px 10px 38px;
+    /*line-height: 88px;*/
+    /*border: 1px solid salmon;*/
+
+}
+
+.nav-item a:hover {
+    color: #ff6700;
+}
+
+.header-search {
+    float: right;
+    width: 296px;
+    margin-top: 25px;
+    /*border: 1px solid salmon;*/
+}
+
+.header-search .search-form {
+    position: relative;
+    display: block;
+    width: 296px;
+    height: 50px;
+}
+
+.header-search input {
+
+    position: absolute;
+    top: 0;
+    border: 1px solid #e0e0e0;
+}
+
+.header-search .search-form .search-text {
+    left: 0;
+
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 48px;
+}
+
+.header-search .search-form .search-btn {
+    right: 0;
+    width: 52px;
+    height: 50px;
+    font-size: 24px;
+    line-height: 24px;
+    background: #fff;
+    color: #616161;
+}
+
+.home {
+    width: 1226px;
+    margin: 0 auto;
+    /*height: 400px;*/
+    /*background-color: #8859d4;*/;
+}
+
+.home-hero .cate {
+    float: left;
+    width: 234px;
+    height: 460px;
+    font-size: 14px;
+    background-color: rgba(105, 101, 101, .6);
+}
+
+.home-hero .cate ul {
+    display: block;
+    list-style: none;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.home-hero .cate ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding-left: 30px;
+    line-height: 42px;
+}
+
+.home-hero .cate ul li a span {
+    float: right;
+    padding-right: 20px;
+}
+
+.home-hero .cate ul li a:hover {
+    background-color: #ff6700;
+}
+
+/*轮播图样式*/
+.home .container .lunbo {
+    float: right;
+    width: 992px;
+    height: 460px;
+    background-color: #333333;
+    position: relative;
+}
+
+.home-hero .lunbo ul {
+    list-style: none;
+}
+
+.home-hero .lunbo ul li {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.home-hero .lunbo ul li a {
+    display: block;
+    height: 460px;
+    width: 992px;
+}
+
+
+.home-hero .lunbo ul li a img {
+    display: block;
+    height: 460px;
+    width: 992px;
+}
+
+/*商品列样式*/
+
+.hero-sub {
+    margin-top: 14px;
+}
+
+.channel-list-left {
+    width: 234px;;
+    height: 170px;
+    background-color: #5f5750;
+    float: left;
+
+}
+
+.channel-list-left ul {
+    list-style: none;
+    padding: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.channel-list-left li {
+    float: left;
+    width: 70px;
+    height: 82px;
+    padding: 0 3px;
+}
+
+.channel-list-left a {
+    display: block;
+    padding-top: 18px;
+    color: #e0e0e0;
+    text-decoration: none;
+    line-height: 60px;
+}
+
+.channel-list-left a:hover {
+    color: #fff;
+}
+
+.channel-list-right {
+    float: right;
+    width: 978px;
+    /*margin-left: 14px;*/
+    /*height: 50px;*/
+    /*background-color: #ff6700;*/
+}
+
+.channel-list-right ul {
+    list-style: none;
+}
+
+.channel-list-right li {
+    float: left;
+    width: 316px;
+    height: 170px;
+    margin-left: 15px;
+}
+
+.channel-list-right .first {
+    margin-left: 0;
+}
+
+.channel-list-right li img {
+    width: 316px;
+    height: 170px;
+}
+
+/*清除浮动*/
+.clearfix:after {
+    display: block;
+    content: "";
+    clear: both;
 }
