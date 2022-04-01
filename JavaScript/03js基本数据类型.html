@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //数字类型
+        var x = 10;
+        var y = 3.14;
+        console.log(x, typeof x)
+        console.log(y, typeof y)
+
+        //字符串型
+        var s1 = 'hello world'
+        var str1 = new String("hello world");
+        console.log(str1, s1)
+        console.log(s1.length)
+        console.log(s1.toUpperCase()); //转大小写
+        console.log(s1.toLowerCase());
+        console.log(s1.indexOf("w")); //获取指定字符在字符串中第一次出现的索引位置
+        console.log(s1[1]); // 字符串也有下标,
+        // slice(开始下标)   从开始位置切到最后
+        // slice(开始下标,结束下标)  从开始下标切到指定位置之前
+        console.log(s1.slice(0, 5)) // 切片,当前方法支持使用负数代表倒数下标
+        // split   正则分割,经常用于把字符串转换成数组
+        var res = s1.split(" ")
+        console.log(res);
+        // substr  截取
+        console.log(s1.substr(2, 2)) //第一个代表位置，第二个代表截取的长度
+        // trim    移除字符串首尾空白  新生成一个，不改变原有的数据
+        var s2 = '   pass word  '
+        console.log(s2.trim())
+
+        //布尔类型
+        var b1 = false;
+        var b2 = true;
+        console.log(typeof b1, typeof b2);
+        console.log(2>3);
+        console.log(true+1);
+
+        //空值类型
+        // （1）当声明的变量未初始化时，该变量的默认值是 undefined。
+        // （2）当函数无明确返回值时，返回的也是值 undefined;
+        var a;
+        console.log(a,typeof a);
+        // 函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null
+        console.log(undefined==null);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

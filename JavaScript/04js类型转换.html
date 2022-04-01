@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1. 转换数据为数值类型
+        // parseInt     把数据转换成整数
+        // parseFloat   把数据转换成小数
+        // Number       把数据转换成数值
+        var box1 = "一共100件"; // 转换会失败
+        var box2 = "100.1件";     // 转换会成功
+        var ret = parseInt(box1);
+        console.log(ret); //NaN 属于number类型
+        console.log(parseInt(box2));
+        var box3 = '3.1.4'
+        console.log(Number(box3));  // 使用Number转换的数据里面必须是纯数字!!!!否则都会转换失败
+
+        // 2. 转换数据为字符串
+        // 变量.toString()
+        // String(数据)
+        var x = 100;
+        console.log(x.toString(), typeof x.toString());
+
+
+        // 3. 转换数据成布尔类型(零值)
+        // Boolean()
+        console.log(Boolean(0));
+        console.log(Boolean(""));
+        console.log(Boolean(null));
+        console.log(Boolean([]));
+        console.log(Boolean(undefined));
+
+        // 所谓的自动转换,其实弱类型中的变量会根据当前代码的需要,进行类型的自动隐式转化
+        var s = 1 + true;
+        // true 转换成数值,是1, false转换成数值,是0
+        console.log(s); // 2
+        console.log(1 == "1");
+        console.log(1 + "200");
+        console.log("1" + 200);
+        console.log(1 - "200");
+    </script>
+</head>
+<body>
+
+</body>
+</html>
