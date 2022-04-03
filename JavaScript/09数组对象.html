@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 数组的声明两种方式
+        // var arr = [12, 'hello', true];
+        // console.log(arr, typeof arr);
+        //
+        // var arr1 = new Array([13, 'hello', true]);
+        // console.log(arr1, typeof arr1);
+
+        // 内置方法
+
+        // (1) pop()  出栈,删除最后一个成员作为返回值
+        // var arr = [1, 2, 3, 4, 5];
+        // var ret = arr.pop();
+        // console.log(arr); // [1, 2, 3, 4]
+        // console.log(ret); // 5
+        //
+        //
+        // // (2) push() 入栈,给数组后面追加成员
+        // var arr1 = [1,2,3,4,5];
+        // arr1.push("a");
+        // console.log(arr1); // [1, 2, 3, 4, 5, "a"]
+        //
+        //
+        // // (3) shift是将数组的第一个元素删除
+        // var arr3 = [1,2,3,4,5];
+        // arr3.shift()
+        // console.log(arr3); // [2, 3, 4, 5]
+
+
+        // (4) unshift是将value值插入到数组的开始
+        // var arr = [1, 2, 3, 4, 5];
+        // arr.unshift("yuan")
+        // console.log(arr); // ["yuan",1,2, 3, 4, 5]
+
+        // (5) reverse() 反转排列
+        // var arr = [1,2,3,4,5];
+        // arr.reverse();
+        // console.log(arr); // [5, 4, 3, 2, 1]
+
+        // (6) slice(开始下标,结束下标)  切片,开区间
+        // arr = [1,2,3,4,5]
+        // console.log(arr.slice(1,3)) //[2,3]
+
+        // (7) sort() 排序
+        // var arr = [3,4,1,2,5,10];
+        // console.log( arr ); // [3, 4, 1, 2, 5, 10]
+        // arr.sort();
+        //
+        // // 这是字符的排序,不是数值的排序
+        // console.log(arr);   //  [1, 10, 2, 3, 4, 5]
+
+        // 数值升序
+        // var arr = [3,4,1,2,5,10];
+        // arr.sort(function(a,b){
+        //     return a-b;
+        // });
+        // console.log(arr);  // [1, 2, 3, 4, 5, 10]
+        //
+        // // 数值降序
+        // var arr = [3,4,1,2,5,10];
+        // arr.sort(function(a,b){
+        //     return b-a;
+        // });
+        // console.log(arr); // [10, 5, 4, 3, 2, 1]
+
+        // (8) splice(操作位置的下标,删除操作的成员长度,"替换或者添加的成员1","替换或者添加的成员2")  添加/删除指定的成员   "万能函数"
+        // var arr1 = [1,2,3,4,5]
+        // // 删除元素
+        // arr1.splice(1,1);
+        // console.log(arr1); // 删除指定的1个成员  [1, 3]
+        //
+        // //添加多个元素
+        // var arr2 = ["a","b","c","d"];
+        // arr2.splice(2,0,"w","x","w"); // 添加
+        // console.log(arr2); // ["a", "b", "w", "x", "w", "c", "d"]
+        //
+        // //替换多个元素
+        // var arr3 = ["a","b","c"];
+        // arr3.splice(1,1,"w");
+        // console.log(arr3); // ["a", "w", "c"]
+
+        // (9) concat() 把2个或者多个数组合并
+        // var arr1 = [1,2,3];
+        // var arr2 = [4,5,7];
+        // var ret = arr1.concat(arr2);
+        // console.log( ret );
+
+
+        // (10) join()  把数组的每一个成员按照指定的符号进行拼接成字符串
+        // var str = "广东-深圳-南山";
+        // var arr = str.split("-");
+        // console.log(arr); // ["广东", "深圳", "南山"];
+        //
+        // var arr1 = ["广东", "深圳", "南山"];
+        // var str1 = arr1.join("-");
+        // console.log(str1); // 广东-深圳-南山
+
+        // (14) 其它方法
+        // includes   查询指定数据是否在数组中存在!
+        // indexOf()  查询指定数据在数组中第一次出现的位置
+        // isArray()  判断变量的值是否是数组
+        // console.log(Array.isArray(arr1))
+
+        // 遍历数组
+        var arr = [12, 23, 34]
+        for (var i in arr) {
+            console.log(i, arr[i])
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

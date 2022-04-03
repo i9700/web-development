@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //初始化Date
+        //方法1：不指定参数
+        var data = new Date()
+        console.log(data);
+        // console.log(data.toString());
+        console.log(data.toLocaleString())
+
+        //方法2：参数为日期字符串
+        var d2 = new Date("2004/3/20 11:12");
+        console.log(d2.toLocaleString());
+
+        //方法3：参数为毫秒数(时间戳)
+        var d4 = new Date(5000);
+        console.log(d4.toLocaleString());
+        console.log(d4.toUTCString());
+
+        //方法4：参数为年月日小时分钟秒毫秒
+        var d5 = new Date(2004, 2, 20, 11, 12, 0, 300);
+        console.log(d5.toLocaleString());//毫秒并不直接显示  2004/3/20 11:12:00
+
+        // 获取时间片信息
+        var today = new Date();
+        console.log(today.getFullYear())
+        console.log(today.getMonth()+1)
+        console.log(today.getDate())
+        console.log(today.getHours())
+        console.log(today.getMinutes())
+        console.log(today.getSeconds())
+        console.log(today.getDay())
+
+        /*
+        日期和时间的转换:
+        // 返回国际标准时间字符串
+        toUTCString()
+        // 返回本地格式时间字符串
+        toLocalString()
+        // 返回累计毫秒数(从1970/1/1午夜到本地时间)
+        Date.parse(x)
+        // 返回累计毫秒数(从1970/1/1午夜到国际时间)
+        Date.UTC(x)
+         */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

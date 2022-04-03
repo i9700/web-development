@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 创建方式1
+
+        var  person1 = new Object()
+        person1.name = 'admin';
+        person1.age = 18;
+        // console.log(person1.name,person1.age)
+
+        // 创建方式2
+
+        var person2 = {
+            name:"admin",
+            age:18
+        };
+        // console.log(person2.name,person2.age)
+
+        // object 访问方式
+
+        // console.log(person["age"]);
+        // console.log(person.age)
+
+        // object可以通过for循环遍历
+         for (var attr in person1){
+           console.log(attr,person1[attr]);
+      }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

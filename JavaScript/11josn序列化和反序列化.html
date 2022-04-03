@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var s = '{"name":"admin","age":18}';
+        var obj = JSON.parse(s);
+        console.log(obj)
+        var data = {
+            name: 'xiaoming',
+            age: 22,
+            say: function () {
+                alert(123);
+            }
+        };
+        var res = JSON.stringify(data);
+        // data.say()
+        console.log(data)
+        console.log(res,typeof res);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

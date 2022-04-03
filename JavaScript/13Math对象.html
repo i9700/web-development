@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  Number对象的内置方法
+        //  toFixed(x) 保留小数位
+        var num = 100.3;
+        var ret = num.toFixed(2);
+        console.log(num);  // 100.3
+        console.log(ret);  // 100.30
+
+        // Math对象的内置方法
+        // abs(x)  返回数值的绝对值
+        // var num = -10;
+        console.log( Math.abs(num) ); // 10
+
+        // ceil(x)  向上取整
+        var num = 10.3;
+        console.log( Math.ceil(num) ); // 11
+
+        // floor(x) 向下取整
+        var num = 10.3;
+        console.log( Math.floor(num) ); // 10
+
+        // max(x,y,z,...,n)
+        console.log( Math.max(3,56,3) ); // 56
+        // min(x,y,z,...,n)
+
+        // pow(x,y)
+        console.log(Math.pow(3, 2)); // 相等于 3**2
+        console.log(3 ** 2); // 使用这个,上面废弃
+
+
+        // random()  生成0-1随机数
+        console.log( Math.random() );
+
+        // 生成0-10之间的数值
+        console.log(Math.random() * 10);
+
+        // round(x) 四舍五入
+        // 生成0-10之间的整数
+        console.log( Math.round( Math.random() * 10 ) );
+
+        //练习：获取1-100的随机整数，包括1和100
+        var number = Math.random()*100
+        number = Math.round(number)
+        console.log(number)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
