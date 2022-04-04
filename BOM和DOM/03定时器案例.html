@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function start() {
+            var now = new Date();
+            var now_time = now.toLocaleString();
+            console.log(now_time);
+
+            ele = document.getElementById("i1");
+            console.log(ele);
+            ele.value = now_time;
+        }
+
+        var ID;
+
+        function show() {
+            // 判断是否首次开启定时器
+            if (ID === undefined) {
+                start();
+                ID = setInterval(start, 1000);
+            }
+        }
+
+        function end() {
+            clearInterval(ID);
+            ID=undefined;
+        }
+    </script>
+</head>
+<body>
+<input type="text" value="" id="i1">
+<button onclick="show()">开始</button>
+<button onclick="end()">结束</button>
+</body>
+</html>

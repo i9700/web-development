@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="i1">div1</div>
+<div class="c1">111</div>
+<div class="c1">111</div>
+<div class="c1">111</div>
+
+<div class="outer">
+    <div class="c1">item</div>
+</div>
+
+<div class="c2">
+    <div class="c3">
+        <ul class="c4">
+            <li class="c5" id="i2">111</li>
+            <li>222</li>
+            <li>333</li>
+             <li class="c5">444</li>
+        </ul>
+    </div>
+</div>
+<script>
+    // 直接查找
+    var ele = document.getElementById("i1"); // ele就是一个dom对象
+    console.log(ele);
+
+    var eles = document.getElementsByClassName("c1"); //eles 是一个数组 [dom1, dom2,...]
+    console.log(eles);
+
+    var eles1 = document.getElementsByTagName("div");
+    console.log(eles1);
+
+    var outer = document.getElementsByClassName("outer")[0];
+    console.log(outer);
+    var item = outer.getElementsByClassName("c1")[0];
+    console.log(item);
+
+    // 导航查找标签 （链式操作）
+
+    var c5 = document.getElementsByClassName("c5")[0];
+    console.log(c5); // c5是一个dom对象
+    console.log(c5.parentElement); // 父节点
+    console.log(c5.parentElement.children); //所有子节点
+    console.log(c5.parentElement.firstElementChild); // 第一个子节点
+    console.log(c5.parentElement.lastElementChild); // 最后一个子节点
+    console.log(c5.nextElementSibling); //下一个兄弟标签
+    console.log(c5.parentElement.lastElementChild.previousElementSibling); //上一个兄弟标签
+
+    // css选择器
+     console.log("css选择器");
+    var dom = document.querySelector(".c5");
+    console.log(dom);
+
+    var doms = document.querySelectorAll(".c5");
+    console.log(doms);
+
+
+</script>
+</body>
+</html>

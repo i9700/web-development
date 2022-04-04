@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // js中最大的一个对象.整个浏览器窗口出现的所有东西都是window对象的内容
+        console.log(window);
+
+        // window对象下的三个弹框方法
+        window.alert("111");
+
+        var ret = window.confirm("是否继续？");
+        console.log(ret);
+        if (ret) {
+            window.open("https://www.baidu.com/?tn=02003390_75_hao_pg", "_blank");
+        }
+
+        var res = window.prompt("请输入：");
+        console.log(res);
+        window.close();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 设置循环定时器
+        var ID = window.setInterval(function () {
+            console.log("ok")
+        }, 2000)           // 每millisec毫秒执行一次code
+
+        // 取消循环定时器
+        window.clearInterval(ID);
+
+        // 设置单次定时器
+        var ID2 = window.setTimeout(function () {
+            console.log("hello")
+        }, 2000)            // millisec毫秒后执行code一次
+
+        console.log(ID2)
+        // 取消单次定时器
+
+        window.clearTimeout(ID2)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="t1">
+
+<script >
+    // 获取焦点事件
+    var ele=document.getElementById("t1");
+    ele.onfocus = function () {
+        console.log("in")
+    }
+    // 失去焦点事件
+    ele.onblur = function () {
+        console.log("out")
+    }
+</script>
+</body>
+</html>

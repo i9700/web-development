@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class="add_btn">添加节点</button>
+<button class="del_btn">删除节点</button>
+<button class="replace_btn">替换节点</button>
+<div class="c1">
+    <h3>hello world!</h3>
+    <h3 class="c2">admin</h3>
+</div>
+
+<script>
+    var add_btn = document.querySelector(".add_btn");
+    var c1 = document.querySelector(".c1");
+    var c2 = document.querySelector(".c2");
+    add_btn.onclick = function () {
+        // 创建节点：
+        var ele = document.createElement("img"); //<img> 创建的是标签，需要对标签进行文本操作和属性操作
+        ele.src = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F0H120155P2%2F200H1155P2-6-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1651674598&t=753cee023edd4fc1145d4c9173233318";
+        console.log(ele);
+        c1.appendChild(ele); // 在父节点下插入子节点(末尾追加)
+        // c1.insertBefore(ele, c2) ;//在参考节点c2之前插入
+
+
+    }
+    var del_btn = document.querySelector(".del_btn");
+    del_btn.onclick = function () {
+        c1.removeChild(c2); // 删除子节点
+    }
+    var replace_btn = document.querySelector(".replace_btn");
+    replace_btn.onclick = function () {
+        // 创建替换节点：
+        var ele = document.createElement("img");
+        ele.src = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F110220144354%2F201102144354-4-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1651675257&t=0e4e960afc6b52d7acf6e9f2f9266100"
+        c1.replaceChild(ele, c2)
+    }
+
+</script>
+</body>
+</html>

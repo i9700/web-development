@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="name"><span>admin</span></div>
+
+<input type="text" class="c1" value="hello">
+<button class="btn">change</button>
+<select name="" id="i1">
+    <option value="jiangxi">江西</option>
+    <option value="hunan" selected>湖南</option>
+    <option value="hubei">湖北</option>
+</select>
+<button class="btn2">change2</button>
+<p>
+    <textarea name="" id="i2" cols="30" rows="10" >admin</textarea>
+</p>
+<script>
+    // 查询文本
+    var ele = document.querySelector(".name");
+    console.log(ele.innerHTML);
+    console.log(ele.innerText);
+
+    // 设置文本
+    ele.onclick = function () {
+        ele.innerHTML = "hello"
+        //  ele.innerText="hello";
+        //  ele.innerHTML = "<a href=''>admin</a>";
+        //  ele.innerText = '<a href=\'\'>admin</a>';
+    }
+
+    //value 操作  input标签、select标签、textarea标签，是没有文本的，但是显示内容由value属性决定
+    var ele1 = document.querySelector(".c1");
+    // console.log(ele1.value='hello js');
+    var btn = document.querySelector(".btn");
+    btn.onclick = function () {
+        ele1.value = 'hello js';
+    }
+
+    // select标签
+    var ele2 = document.querySelector("#i1");
+    console.log(ele2.value);
+    var btn2 = document.querySelector(".btn2");
+    btn2.onclick = function () {
+        ele2.value = 'jiangxi';  //匹配成功显示， 不匹配显示空
+    }
+
+    // textarea标签
+    var ele3 = document.querySelector("#i2");
+    // console.log(ele3);
+    console.log(ele3.value='hello');
+</script>
+</body>
+</html>

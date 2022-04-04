@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<!--// 实参 this 代指当前标签 -->
+<div onclick="foo(this)">click</div>
+<!--<div ondblclick="foo()">click2</div>-->
+
+<p id="i1">ppp</p>
+<uL>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+</uL>
+<script>
+    // 静态绑定 ：直接把事件写在标签元素中
+    function foo(self) { // 形参不能叫this
+        // var p = document.querySelector("#i1")
+        // console.log(p.innerHTML) //     获取dom标签对象的文本
+        // alert(p.innerHTML)
+        console.log(self.innerHTML)  // self:dom 对象
+    }
+
+    // 动态绑定：在js中通过代码获取元素对象,然后给这个对象进行后续绑定  dom对象. on事件=function(){
+    // 事件触发代码
+    // 事件函数中的this：代指的是触发事件的标签                                                                              }
+    var ele = document.querySelector("#i1");
+    ele.onclick = function () {
+        console.log(this.innerHTML);  //this 代指 ele
+    }
+
+    // 循环绑定事件
+    var eles = document.querySelectorAll("ul li");
+    console.log(eles)
+    for (var i = 0; i < eles.length; i++) {
+        // console.log(eles[i])
+        eles[i].onclick = function () {
+            console.log(this.innerHTML);
+        }
+    }
+
+
+</script>
+</body>
+</html>
