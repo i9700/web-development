@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            height: 300px;
+        }
+
+        .tab {
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .tab th {
+            padding: 5px 80px;
+        }
+
+        .tab td {
+            padding: 5px 80px;
+        }
+    </style>
+</head>
+<body>
+<h3>员工管理系统</h3>
+<div class="box">
+    <table class="tab" border="1">
+        <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>部门</th>
+            <th>删除</th>
+            <th>编辑</th>
+        </tr>
+        </thead>
+        <tbody class="tbody">
+        <tr>
+            <td>张三</td>
+            <td>34</td>
+            <td>销售</td>
+            <td>
+                <button onclick="del_tr(this)">删除</button>
+            </td>
+            <td>
+                <button onclick="edit_tr(this)">编辑</button>
+            </td>
+        </tr>
+        <tr>
+            <td>王五</td>
+            <td>23</td>
+            <td>运营</td>
+            <td>
+                <button onclick="del_tr(this)">删除</button>
+            </td>
+            <td>
+                <button onclick="edit_tr(this)">编辑</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<fieldset class="add-box">
+    <legend>添加员工</legend>
+    <p>姓名: <input type="text" value=""></p>
+    <p>年龄: <input type="text" value=""></p>
+    <p>部门:
+        <select name="" id="dep">
+            <option value="销售">销售部</option>
+            <option value="运营">运营部</option>
+            <option value="开发">开发部</option>
+        </select>
+    </p>
+    <p>
+        <button class="add">添加</button>
+    </p>
+</fieldset>
+
+<script>
+    var add = document.querySelector(".add");
+    var tbody = document.querySelector(".tbody"); // 父节点
+
+    add.onclick = function () {
+        // 1.创建tr节点
+        tr = document.createElement("tr")
+        var input = document.querySelectorAll("input,#dep");
+        // console.log(input)
+
+        for (var i = 0; i < input.length; i++) {
+            var td = document.createElement("td"); // 在创建td节点
+            td.innerHTML = input[i].value;
+            // console.log(td)
+            tr.appendChild(td);
+            input[i].value = ""  //添加完成后--清空
+        }
+        add_button("删除", "onclick", "del_tr(this)")
+        add_button("编辑", "onclick", "edit_tr(this)")
+        console.log(tr)
+        tbody.appendChild(tr)
+        /*  添加删除按钮
+          td = document.createElement("td") //创建td节点
+          var button = document.createElement("button"); //创建删除按钮
+          button.innerHTML = "删除";
+          button.setAttribute("onclick", "del_tr(this)")
+          td.appendChild(button)
+          tr.appendChild(td)
+          */
+    }
+
+    // 添加按钮
+    function add_button(btn_name, attribute, value) {
+        var td = document.createElement("td") //创建td节点
+        var button = document.createElement("button");
+        button.innerHTML = btn_name;
+        button.setAttribute(attribute, value)
+        td.appendChild(button)
+        tr.appendChild(td)
+    }
+
+    // 删除
+    function del_tr(self) {
+        var del_tr = self.parentElement.parentElement
+        tbody.removeChild(del_tr)
+    }
+
+    //
+    // function edit_tr(self) {
+    //     self.innerHTML = "保存";
+    //     self.setAttribute("onclick", "save(this)");
+    //     console.log(self.parentElement.parentElement.children);
+    //     var chidlren_td = self.parentElement.parentElement.children;
+    //     for (var i = 0; i < chidlren_td / length - 2; i++) {
+    //         var input = document.createElement("input");
+    //         input.setAttribute("type", "text");
+    //         chidlren_td[i].innerHTML = "";
+    //         chidlren_td[i].appendChild(input);
+    //     }
+    // }
+    //
+    // function save() {
+    //     self.innerHTML = "编辑";
+    //     self.setAttribute("onclick", "edit_tr(this)");
+    //     var chidlren_td = self.parentElement.parentElement.children;
+    //     for (var i = 0; i < chidlren_td.length; i++) {
+    //         chidlren_td[i].innerHTML = chidlren_td[i].firstElementChild.value
+    //     }
+    // }
+
+
+</script>
+</body>
+</html>
