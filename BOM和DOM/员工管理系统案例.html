@@ -63,8 +63,8 @@
 </div>
 <fieldset class="add-box">
     <legend>添加员工</legend>
-    <p>姓名: <input type="text" value=""></p>
-    <p>年龄: <input type="text" value=""></p>
+    <p>姓名: <input type="text"></p>
+    <p>年龄: <input type="text"></p>
     <p>部门:
         <select name="" id="dep">
             <option value="销售">销售部</option>
@@ -83,7 +83,7 @@
 
     add.onclick = function () {
         // 1.创建tr节点
-        tr = document.createElement("tr")
+        tr = document.createElement("tr");
         var input = document.querySelectorAll("input,#dep");
         // console.log(input)
 
@@ -92,12 +92,12 @@
             td.innerHTML = input[i].value;
             // console.log(td)
             tr.appendChild(td);
-            input[i].value = ""  //添加完成后--清空
+            input[i].value = ""; //添加完成后--清空
         }
-        add_button("删除", "onclick", "del_tr(this)")
-        add_button("编辑", "onclick", "edit_tr(this)")
-        console.log(tr)
-        tbody.appendChild(tr)
+        add_button("删除", "onclick", "del_tr(this)");
+        add_button("编辑", "onclick", "edit_tr(this)");
+        console.log(tr);
+        tbody.appendChild(tr);
         /*  添加删除按钮
           td = document.createElement("td") //创建td节点
           var button = document.createElement("button"); //创建删除按钮
@@ -110,42 +110,46 @@
 
     // 添加按钮
     function add_button(btn_name, attribute, value) {
-        var td = document.createElement("td") //创建td节点
+        var td = document.createElement("td");//创建td节点
         var button = document.createElement("button");
         button.innerHTML = btn_name;
-        button.setAttribute(attribute, value)
-        td.appendChild(button)
-        tr.appendChild(td)
+        button.setAttribute(attribute, value);
+        td.appendChild(button);
+        tr.appendChild(td);
     }
 
     // 删除
     function del_tr(self) {
-        var del_tr = self.parentElement.parentElement
-        tbody.removeChild(del_tr)
+        var del_tr = self.parentElement.parentElement;
+        tbody.removeChild(del_tr);
     }
 
-    //
-    // function edit_tr(self) {
-    //     self.innerHTML = "保存";
-    //     self.setAttribute("onclick", "save(this)");
-    //     console.log(self.parentElement.parentElement.children);
-    //     var chidlren_td = self.parentElement.parentElement.children;
-    //     for (var i = 0; i < chidlren_td / length - 2; i++) {
-    //         var input = document.createElement("input");
-    //         input.setAttribute("type", "text");
-    //         chidlren_td[i].innerHTML = "";
-    //         chidlren_td[i].appendChild(input);
-    //     }
-    // }
-    //
-    // function save() {
-    //     self.innerHTML = "编辑";
-    //     self.setAttribute("onclick", "edit_tr(this)");
-    //     var chidlren_td = self.parentElement.parentElement.children;
-    //     for (var i = 0; i < chidlren_td.length; i++) {
-    //         chidlren_td[i].innerHTML = chidlren_td[i].firstElementChild.value
-    //     }
-    // }
+    // 编辑
+    function edit_tr(self) {
+        self.innerHTML = "保存";
+        self.setAttribute("onclick", "save(this)");
+        console.log(self.parentElement.parentElement.children);
+        var children_td = self.parentElement.parentElement.children;
+        for (var i = 0; i < children_td.length - 2; i++) {
+            var input = document.createElement("input");
+            input.setAttribute("type", "text");
+            input.setAttribute("value", children_td[i].innerHTML);
+            children_td[i].innerHTML = "";
+            children_td[i].appendChild(input);
+        }
+    }
+
+    // 保存
+    function save(self) {
+        self.innerHTML = "编辑";
+        self.setAttribute("onclick", "edit_tr(this)");
+        var children_td = self.parentElement.parentElement.children;
+        console.log(self.parentElement.parentElement.children)
+        for(var i=0;i<children_td.length-2;i++){
+            console.log(children_td[i])
+            children_td[i].innerHTML=children_td[i].firstElementChild.value
+        }
+    }
 
 
 </script>
