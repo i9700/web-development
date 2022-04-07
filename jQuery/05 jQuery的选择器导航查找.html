@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    远程导入-->
+    <!--    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>-->
+    <!--本地导入-->
+    <script src="jquery3.6.js"></script>
+
+</head>
+<body>
+<div class="c1">
+    <div class="c2">
+        <div class="c3">
+            <p>p1</p>
+        </div>
+    </div>
+    <p>p2</p>
+</div>
+
+<ul class="c4">
+    <li>111</li>
+    <li class="c5">222</li>
+    <li>333</li>
+    <li>444</li>
+    <li id="i1">555</li>
+
+</ul>
+<!--<div class="c5">666</div>-->
+<!--<div>777</div>-->
+
+<script>
+    // 查询儿子
+    // console.log($(".c1").children(""))
+    // console.log($(".c1").children(".c2"))
+
+    // 查询后代
+    // console.log($(".c1").find(".c3")) //find 必须传值，不写返回空
+
+    // 查询兄弟
+    // console.log($(".c5").next())
+    // $(".c5").nextAll().css("color","red")
+    // $(".c5").nextUntil("#i1").css("color","red") // 向下查找，直到#1 ，不包含
+    // console.log($(".c5").prev())
+    // $(".c5").prevAll().css("color","red")
+    // $("#i1").prevUntil(".c5").css("color","red") // 向上查找，直到c5 ，不包含
+
+    // 查找所有兄弟标签
+    // $(".c5").siblings().css("color","red")
+
+    // 查找父标签：
+    $(".c3").parent().css("color","red")
+    console.log( $(".c3").parent())
+    console.log( $(".c3").parents())
+     console.log( $(".c3").parentsUntil('body'))
+
+</script>
+</body>
+</html>
