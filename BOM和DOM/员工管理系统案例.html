@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>员工管理系统</title>
     <style>
         .box {
             height: 300px;
@@ -98,14 +98,6 @@
         add_button("编辑", "onclick", "edit_tr(this)");
         console.log(tr);
         tbody.appendChild(tr);
-        /*  添加删除按钮
-          td = document.createElement("td") //创建td节点
-          var button = document.createElement("button"); //创建删除按钮
-          button.innerHTML = "删除";
-          button.setAttribute("onclick", "del_tr(this)")
-          td.appendChild(button)
-          tr.appendChild(td)
-          */
     }
 
     // 添加按钮
@@ -128,7 +120,7 @@
     function edit_tr(self) {
         self.innerHTML = "保存";
         self.setAttribute("onclick", "save(this)");
-        console.log(self.parentElement.parentElement.children);
+        // console.log(self.parentElement.parentElement.children);
         var children_td = self.parentElement.parentElement.children;
         for (var i = 0; i < children_td.length - 2; i++) {
             var input = document.createElement("input");
@@ -144,7 +136,7 @@
         self.innerHTML = "编辑";
         self.setAttribute("onclick", "edit_tr(this)");
         var children_td = self.parentElement.parentElement.children;
-        console.log(self.parentElement.parentElement.children)
+        // console.log(self.parentElement.parentElement.children)
         for(var i=0;i<children_td.length-2;i++){
             console.log(children_td[i])
             children_td[i].innerHTML=children_td[i].firstElementChild.value

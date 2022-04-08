@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery3.6.js"></script>
+    <script>
+        $(function () {
+            $("#i1").blur(function () {
+                // console.log("ok")
+                // 获取jQuery对象的value属性值
+                console.log($(this).val());
+                // 设置value值
+                $(this).val("tao")
+                console.log($(this).val());
+            })
+
+            $("#i3").change(function () {
+                console.log($(this).val())
+                $(this).val("guangdong")
+            })
+
+            console.log($("#i2").val())
+            $("#i2").val("push origin")
+        })
+
+    </script>
+</head>
+<body>
+
+<input type="text" id="i1">
+
+<select id="i3">
+    <option value="hebei">河北省</option>
+    <option value="hubei">湖北省</option>
+    <option value="guangdong">广东省</option>
+</select>
+
+<p><textarea name="" id="i2" cols="30" rows="10">123</textarea></p>
+
+</body>
+</html>
