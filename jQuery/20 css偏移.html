@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery3.6.js"></script>
+    <style>
+        .c1 {
+            width: 800px;
+            height: 500px;
+            background-color: lightgray;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .c2 {
+            width: 200px;
+            height: 200px;
+            background-color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+<div class="c1">
+    <div class="c2"></div>
+</div>
+<script>
+    // 获取位置信息
+    // offset：相对于窗口偏移 position：相对于已经定位的父级标签的偏移量
+    var $offset = $(".c2").offset()
+    var $position = $(".c2").position()
+    console.log($offset.top)
+    console.log($offset.left)
+    console.log($position.top)
+    console.log($position.left)
+
+    // 设置偏移量 offset
+    // $(".c2").offset()
+    $(".c2").click(function () {
+        $(this).offset({top:100,left:100})
+        console.log($(this).offset().top)
+        console.log($(this).offset().left)
+    })
+
+</script>
+</body>
+</html>

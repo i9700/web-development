@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery3.6.js"></script>
+    <style>
+        .c1{
+            height: 3000px;
+            background-color: gray;
+        }
+        .return_top{
+            height: 60px;
+            width: 180px;
+            background-color: orange;
+            line-height: 60px;
+            text-align: center;
+            font-size: 32px;
+            /*完全脱离文档流，参照物：；浏览器窗口*/
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="c1"></div>
+<div class="return_top" >返回顶部</div>
+
+<script>
+    $(".return_top").click(function () {
+        $(window).scrollTop(0)
+    })
+
+    $(window).scroll(function () {  //绑定 监听滚动条事件
+       var v = $(this).scrollTop()
+        if(v>500){
+            $(".return_top").removeClass("hide")
+        }
+        else {
+            $(".return_top").addClass("hide")
+        }
+    })
+</script>
+</body>
+</html>

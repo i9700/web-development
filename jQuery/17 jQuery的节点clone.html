@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery3.6.js"></script>
+</head>
+<body>
+<div class="outer">
+    <div class="item">
+         <button class="add">+</button>
+         <input type="text">
+    </div>
+
+</div>
+
+
+
+<script>
+    $(".add").click(function () {
+        var $clone = $(this).parent().clone()
+        $clone.children(".add").html("-").attr("class","del")
+        $(".outer").append($clone)
+    })
+    $(".outer").on("click",".del",function () {
+        $(this).parent().remove()
+    })
+</script>
+</body>
+</html>

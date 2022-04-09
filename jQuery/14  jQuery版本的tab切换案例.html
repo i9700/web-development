@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery3.6.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tab {
+            width: 800px;
+            height: 300px;
+            /*border: 1px solid red;*/
+            margin: 200px auto;
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        .tab-title li {
+            display: inline-block;
+        }
+
+        .tab-title {
+            display: inline-block;
+            background-color: #f7f7f7;
+            border: 1px solid #eee;
+            border-bottom: 1px solid #e4393c;
+        }
+
+        .tab-title li {
+            padding: 10px 25px;
+            font-size: 14px;
+        }
+
+        .tab-title .current {
+            background-color: #e4393c;
+            color: #fff;
+            cursor: default;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="tab">
+    <ul class="tab-title">
+        <li class="current" index="0">商品介绍</li>
+        <li class="" index="1">规格与包装</li>
+        <li class="" index="2">售后保障</li>
+        <li class="" index="3">商品评价(1000+)</li>
+
+    </ul>
+    <ul class="tab-content">
+        <li class="">商品介绍...........</li>
+        <li class="hide">规格与包装.........</li>
+        <li class="hide">售后保障........</li>
+        <li class="hide">商品评价(1000+)....</li>
+    </ul>
+</div>
+
+<script>
+    $(".tab-title li").click(function () {
+        console.log(this);
+        $(this).addClass("current").siblings().removeClass("current"); //链式操作
+        var index =  $(this).index()
+        $(".tab-content li").eq(index).removeClass("hide").siblings().addClass("hide")
+    })
+
+    // $(".tab-title li").click(function () {
+    //
+    //     $(".tab-title li").each(function () {
+    //         $(this).removeClass("current");
+    //     })
+    //     $(this).addClass("current");
+    //     var index = $(this).attr("index")
+    //     $(".tab-content li").each(function () {
+    //         $(this).addClass("hide");
+    //     })
+    //     $($(".tab-content li")[index]).removeClass("hide")
+    // })
+
+
+
+    // var eles = document.querySelectorAll(".tab-title li")
+    // var content = document.querySelectorAll("tab-content li")
+    // for (var i = 0; i < eles.length; i++) {
+    //     eles[i].onclick = function () {
+    //         for (var j = 0; j < eles.length; j++) {
+    //             eles[j].classList.remove("current")
+    //         }
+    //         // (1)触发事件标签拥有current样式
+    //         this.classList.add("current")
+    //
+    //         // (2)显示对应的ele下详情内容
+    //         index = this.getAttribute("index")
+    //         var content = document.querySelectorAll(".tab-content li")
+    //         console.log(content[index])
+    //         for (var k = 0; k < eles.length; k++) {
+    //             content[k].classList.add("hide")
+    //         }
+    //         content[index].classList.remove("hide")
+    //     }
+    // }
+</script>
+</body>
+</html>

@@ -81,10 +81,9 @@
             var content = document.querySelectorAll(".tab-content li")
             console.log(content[index])
             for (var k = 0; k < eles.length; k++) {
-
-                content[index].classList.remove("hide")
-
+                content[k].classList.add("hide")
             }
+            content[index].classList.remove("hide")
         }
     }
 </script>
