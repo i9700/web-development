@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>员工管理系统</title>
+    <!--    <link rel="stylesheet" href="\web-development-master\bootstrap-3.4.1\dist\css\bootstrap.css">-->
+    <!--    <script src="jquery3.6.js"></script>-->
+    <!--    <script src="\web-development-master\bootstrap-3.4.1\dist\js\bootstrap.js"></script>-->
     <link rel="stylesheet" href="\web-developmen\bootstrap-3.4.1\dist\css\bootstrap.css">
     <script src="jquery3.6.js"></script>
     <script src="\web-developmen\bootstrap-3.4.1\dist\js\bootstrap.js"></script>
@@ -94,8 +97,9 @@
         </div>
         <div class="col-md-9">
             <!-- Button trigger modal -->
+            <!--            data-toggle="modal" data-target="#myModal"-->
             <p>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-primary add_btn">
                     添加员工
                 </button>
             </p>
@@ -150,15 +154,15 @@
                     <th>操作</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody class="tbody">
                 <tr>
                     <td>1</td>
                     <td>张三</td>
                     <td>23</td>
                     <td>销售部</td>
                     <td>
-                        <button class="btn btn-danger btn-sm">删除</button>
-                        <button class="btn btn-success btn-sm">编辑</button>
+                        <button class="btn btn-danger btn-sm del_btn">删除</button>
+                        <button class="btn btn-success btn-sm edit_btn">编辑</button>
                     </td>
                 </tr>
                 <tr>
@@ -167,8 +171,8 @@
                     <td>21</td>
                     <td>销售部</td>
                     <td>
-                        <button class="btn btn-danger btn-sm">删除</button>
-                        <button class="btn btn-success btn-sm">编辑</button>
+                        <button class="btn btn-danger btn-sm del_btn">删除</button>
+                        <button class="btn btn-success btn-sm edit_btn">编辑</button>
                     </td>
                 </tr>
                 <tr>
@@ -177,8 +181,8 @@
                     <td>21</td>
                     <td>销售部</td>
                     <td>
-                        <button class="btn btn-danger btn-sm">删除</button>
-                        <button class="btn btn-success btn-sm">编辑</button>
+                        <button class="btn btn-danger btn-sm del_btn">删除</button>
+                        <button class="btn btn-success btn-sm edit_btn">编辑</button>
                     </td>
                 </tr>
 
@@ -189,12 +193,77 @@
 </div>
 
 <script>
-    // $(".container .add_btn ").click(function () {
-    //     $('#myModal').modal('show');
-    // })
-    // $(".keep_btn").click(function () {
-    //     $('#myModal').modal('hide');
-    // })
+    $(".container p .add_btn ").click(function () {
+        $('#myModal').modal('show');
+    })
+    $(".keep_btn").click(function () {
+        // 关闭模态框
+        $('#myModal').modal('hide');
+        // 添加节点
+        var name = $("#name").val();
+        var age = $("#age").val();
+        var dep = $("#dep").val();
+        // 子节点id 递增
+        var id = $(".tbody").children().length + 1
+        // console.log(id)
+        // 输入校验
+
+        if (name !== "" && age !== "") {
+            // 构建tr节点
+            var tr = `<tr>
+            <td>${id}</td>
+            <td>${name}</td>
+            <td>${age}</td>
+            <td>${dep}</td>
+            <td>
+            <button class="btn btn-danger btn-sm del_btn">删除</button>
+            <button class="btn btn-success btn-sm edit_btn">编辑</button>
+            </td>
+            </tr>`
+        } else {
+            alert("用户名和年龄为空!")
+        }
+
+        $(".tbody").append(tr);
+    })
+    // 删除节点：事件委派
+    $(".tbody").on("click", ".del_btn", function () {
+        // console.log($(this).parent().parent())
+        $(this).parent().parent().remove();
+        // 删除节点后重新排序
+        $(".tbody tr td:first-child").each(function (i) {
+            $(this).html(i + 1);
+        })
+    })
+
+    // 编辑
+    $(".tbody").on("click", ".edit_btn", function () {
+        $(this).html("保存").attr("class", "btn btn-warning btn-sm save_btn");
+        $(this).parent().siblings().each(function () {
+            if ($(this).index() !== 0) {
+                var value = $(this).html();
+                var input = `<input type="text" value="${value}">`;
+                $(this).html("");
+                $(this).html(input);
+            }
+        })
+    })
+
+    // 保存
+    $(".tbody").on("click", ".save_btn", function () {
+        $(this).html("编辑").attr("class", "btn btn-success btn-sm edit_btn")
+        $(this).parent().siblings().each(function () {
+            if ($(this).index() !== 0) {
+                var value = $(this).children().val();
+                $(this).html(value);
+            }
+        })
+    })
+    $(function () {
+  $('[data-toggle="popover"]').popover()
+})
 </script>
+<a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" data-content="用户名和年龄为空!">可消失的弹出框</a>
+
 </body>
 </html>
