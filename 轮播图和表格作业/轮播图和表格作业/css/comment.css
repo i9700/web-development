@@ -1,0 +1,90 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+
+}
+
+.outer {
+    width: 590px;
+    height: 470px;
+    margin: 200px auto;
+    position: relative;
+}
+
+.outer .img li {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn li {
+    position: absolute;
+    top: 50%;
+    margin-top: -12.5px;
+
+}
+
+.btn .left-btn {
+    left: 0;
+    margin-left: 5px;
+}
+
+.btn .right-btn {
+    right: 0;
+    margin-right: 5px;
+}
+
+.outer .glyphicon {
+    height: 25px;
+    width: 25px;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.glyphicon-menu-left:before {
+    display: inline-block;
+    line-height: 25px;
+    left: 0;
+}
+
+.glyphicon-menu-right:before {
+    display: inline-block;
+    line-height: 25px;
+    right: 0;
+}
+
+.num {
+    display: inline-block;
+    width: 120px;
+    position: absolute;
+    bottom: 16px;
+    left: 235px;
+    z-index: 100;
+}
+
+.num li {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: grey;
+    text-align: center;
+    line-height: 16px;
+    margin-left: 5px;
+    border-radius: 50%;
+
+}
+
+.outer .num .current {
+    background-color: #fff;
+}
+
+.hide {
+    display: none;
+}
